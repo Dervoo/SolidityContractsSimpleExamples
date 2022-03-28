@@ -3,9 +3,6 @@ require('@nomiclabs/hardhat-ethers');
 require("dotenv").config()
 require("hardhat-gas-reporter")
 require('@openzeppelin/hardhat-upgrades');
-require("@nomiclabs/hardhat-etherscan");
-require('.env')
-
 // let secret = require('./.secret');
 const REPORT_GAS = process.env.REPORT_GAS || false
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -45,23 +42,18 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     //   url: secret.ethereum_url,
     //   accounts: [secret.ethereum_key],
     // },
-    Ropsten: {
-      url: process.env.ROPSTEN_URL || "YOUR_ROPSTEN_URL",
-      accounts: process.env.ROPSTEN_PRIVATE_KEY !== undefined ? [process.env.ROPSTEN_PRIVATE_KEY] : []
-    },
+    // Ropsten: {
+    //   url: secret.ropsten_url,
+    //   accounts: [secret.ropsten_key],
+    // },
     // Kovan: {
     //   url: secret.kovan_url,
     //   accounts: [secret.kovan_key],
     // },
     Rinkeby: {
-      url: process.env.RINKEBY_URL || "YOUR_RINKEBY_URL",
+      url: process.env.RINKEBY_URL || "https://eth-rinkeby.alchemyapi.io/v2/C6raRaQEqH8nRtFGrRtzKlElj50eT6v_",
       accounts: process.env.RINKEBY_PRIVATE_KEY !== undefined ? [process.env.RINKEBY_PRIVATE_KEY] : []
     },
-  },
-  etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: API_KEY
   },
   gasReporter: {
     enabled: REPORT_GAS,
