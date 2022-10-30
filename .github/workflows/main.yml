@@ -40,18 +40,3 @@ jobs:
           sudo snap install solc
           python -m pip install --upgrade pip
           pip install slither-analyzer==0.8.1 solc-select==0.2.1
-      - name: Summary of static ananlysis
-        run: |
-          slither . --print human-summary
-      - name: Contract summary of static ananlysis
-        run: |
-          slither . --print contract-summary
-      - name: Function summary
-        run: |
-          slither . --print function-summary
-      - name: Inheritance
-        run: |
-          slither . --print inheritance
-      - name: Data dependency
-        run: |
-          slither . --print data-dependency
