@@ -2,9 +2,8 @@
 pragma solidity ^0.8.7;
 
 contract LibraryTerminal {
- Person[] public people;
+    Person[] public people;
     uint256 public peopleCount = 0;
-   
 
     struct Person {
         string _FirstName;
